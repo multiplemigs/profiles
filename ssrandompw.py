@@ -1,28 +1,23 @@
 #!/usr/bin/python
-
 import random
-
-for x in range(0, 23):
+import string
+#variable to how big a random grid you want (i like squares)
+for x in range(23):
     f = open('/usr/share/dict/words')
+    punc = string.punctuation
     words = map(lambda x: x.strip(), f.readlines())
-    password = '-'.join(random.choice(words) for i in range(2)).capitalize()
+    password = ''.join(random.choice(words) for i in range(3)).capitalize()
+    for i in range(2):
+        password = ''.join(random.sample(password,len(password))).capitalize()
+        password = ''.join(random.choice([i.upper(), i ]) for i in password )
+    #sprankle some numbras
     password += str(random.randint(1, 9999))
+    #turn the cube
     password = ''.join(random.sample(password,len(password)))
-    if password.startswith('-'):
-        password = password[1:]
-
-    if password.endswith('-'):
-        password = password[:-1]
-    if len(password) > 8:
-        password = password[1:8]
-        password += str(random.randint(1,99))
-        password = ''.join(random.sample(password,len(password)))
-        if password.startswith('-'):
-            password = password[:1]
-            password += str(random.randint(1,9))
-
-        if password.endswith('-'):
-            password = password[:-1]
-            password += str(random.randint(1,9))
-
+    #sprankle some punc
+    password += ''.join(random.sample(punc,len(punc[:4])))
+    #one last turn
+    password = ''.join(random.sample(password,len(password)))
+    #aaaaaaand chop that thang
+    password = password[:14]
     print password
