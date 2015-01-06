@@ -2,7 +2,7 @@
 import random
 import string
 #variable to how big a random grid you want (i like squares)
-for x in range(23):
+for x in range(24):
     f = open('/usr/share/dict/words')
     punc = string.punctuation
     words = map(lambda x: x.strip(), f.readlines())

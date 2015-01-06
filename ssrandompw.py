@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import random
 import string
-#variable to how big a random grid you want (i like squares)
+#variable to how big a random grid you want
 for x in range(23):
     f = open('/usr/share/dict/words')
     punc = string.punctuation
