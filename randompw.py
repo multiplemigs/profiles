@@ -3,7 +3,7 @@ import random
 import string
 #variable to how big a random grid you want (i like squares)
 for x in range(24):
-    f = open('/usr/share/dict/words')
+    f = open('/home/martinezme2/words')
     punc = string.punctuation
     words = map(lambda x: x.strip(), f.readlines())
     password = ''.join(random.choice(words) for i in range(3)).capitalize()
