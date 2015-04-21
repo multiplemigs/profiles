@@ -63,7 +63,8 @@ set nocompatible
 filetype plugin indent on
 set path=$PWD/**
 
-set cm=blowfish
+set cm=blowfish2
+set noswapfile
 
 highlight ColorColumn ctermbg=magenta
 call matchadd('Colorcolumn', '\%81v', 100)
