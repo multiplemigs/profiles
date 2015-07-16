@@ -1,0 +1,22 @@
+#!/bin/bash
+Now_hourly=$(date +%d-%b-%H_%M)
+cd ~/githubs/infoskrip
+git pull
+echo $?
+rm -f ~/.pwswap/.snerts
+gpg -o ~/.pwswap/.snerts -d ~/githubs/infoskrip/.snerts.gpg
+echo "snert pull at $Now_hourly" >> ~/.pdump/snertlog
+exit
+#######
+#!/bin/bash
+Now_hourly=$(date +%d-%b-%H_%M)
+cd ~/githubs/infoskrip
+#git pull
+#e existing files for push to git
+gpg -e -r martinezmi@gmail.com ~/.pwswap/.snerts
+mv -f ~/.pwswap/.snerts.gpg ~/githubs/infoskrip/.snerts.gpg
+git add --all :/
+git commit -m "snert push at $Now_hourly"
+echo "snert push at $Now_hourly" >> ~/.pdump/snertlog
+git push
+exit
