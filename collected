@@ -16,9 +16,9 @@ else
 	cd ~/githubs/infoskrip
 	git pull
 	echo $?
-	rm -f ~/.pwswap/.snerts
+	mv ~/.pwswap/.snerts ~/.pdump/.fordif.snerts.$Now_hourly
 	gpg -o ~/.pwswap/.snerts -d ~/githubs/infoskrip/.snerts.gpg
 	echo "snert pull at $Now_hourly" >> ~/.pdump/snertlog
-	touch ~/.pdump/.pwc
+	touch ~/.pdump/..pwc
 	exit
 fi
