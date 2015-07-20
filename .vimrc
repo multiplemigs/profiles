@@ -26,7 +26,6 @@ set smartindent
 syntax on
 set background=dark
 set title
-set number
 
 hi LineNr       guifg=lightgray         guibg=black     gui=none
 hi LineNr       ctermfg=lightgray       ctermbg=black   cterm=none
@@ -72,6 +71,5 @@ call matchadd('Colorcolumn', '\%81v', 100)
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
-set title 
 set titleold=""
 set titlestring=VIM:\ %F
